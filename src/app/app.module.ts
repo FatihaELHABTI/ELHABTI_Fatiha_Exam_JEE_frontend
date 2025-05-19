@@ -1,12 +1,19 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
-import { AppRoutingModule } from './app-routing.module';
+import { RouterModule, Routes } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { ClientListComponent } from './client-list/client-list.component';
 import { CreditListComponent } from './credit-list/credit-list.component';
 import { RemboursementListComponent } from './remboursement-list/remboursement-list.component';
 import { NavigationComponent } from './navigation/navigation.component';
+
+const routes: Routes = [
+  { path: 'clients', component: ClientListComponent },
+  { path: 'credits/:clientId', component: CreditListComponent },
+  { path: 'remboursements/:creditId', component: RemboursementListComponent },
+  { path: '', redirectTo: '/clients', pathMatch: 'full' },
+];
 
 @NgModule({
   declarations: [
@@ -14,13 +21,13 @@ import { NavigationComponent } from './navigation/navigation.component';
     ClientListComponent,
     CreditListComponent,
     RemboursementListComponent,
-    NavigationComponent
+    NavigationComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    HttpClientModule,
+    RouterModule.forRoot(routes),
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

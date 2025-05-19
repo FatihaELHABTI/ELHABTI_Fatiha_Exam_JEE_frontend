@@ -1,1 +1,11 @@
-<p>navigation works!</p>
+<nav class="bg-gray-800 p-4">
+  <div class="container mx-auto flex justify-between items-center">
+    <h1 class="text-white text-xl font-bold">Banking Credit Management</h1>
+    <ul class="flex space-x-6">
+      <li><a routerLink="/clients" routerLinkActive="text-blue-400" class="text-white hover:text-blue-300">Clients</a></li>
+      <li><a routerLink="/credits/1" routerLinkActive="text-blue-400" class="text-white hover:text-blue-300">Credits</a></li>
+      <li><a routerLink="/remboursements/1" routerLinkActive="text-blue-400" class="text-white hover:text-blue-300">Remboursements</a></li>
+    </ul>
+  </div>
+</nav>
+<router-outlet></router-outlet>

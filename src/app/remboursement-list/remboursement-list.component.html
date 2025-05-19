@@ -1,1 +1,22 @@
-<p>remboursement-list works!</p>
+<div class="container mx-auto p-6">
+  <h2 class="text-2xl font-bold mb-4">Remboursement List</h2>
+  <button (click)="addRemboursement()" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Add Remboursement</button>
+  <table class="min-w-full bg-white shadow-md rounded my-4">
+    <thead>
+    <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
+      <th class="py-3 px-6 text-left">ID</th>
+      <th class="py-3 px-6 text-left">Date</th>
+      <th class="py-3 px-6 text-left">Montant</th>
+      <th class="py-3 px-6 text-left">Type</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let remboursement of remboursements" class="hover:bg-gray-100">
+      <td class="py-3 px-6">{{ remboursement.id }}</td>
+      <td class="py-3 px-6">{{ remboursement.date }}</td>
+      <td class="py-3 px-6">{{ remboursement.montant }}</td>
+      <td class="py-3 px-6">{{ remboursement.type }}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,1 +1,24 @@
-<p>client-list works!</p>
+<div class="container mx-auto p-6">
+  <h2 class="text-2xl font-bold mb-4">Client List</h2>
+  <button (click)="addClient()" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Add Client</button>
+  <table class="min-w-full bg-white shadow-md rounded my-4">
+    <thead>
+    <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
+      <th class="py-3 px-6 text-left">ID</th>
+      <th class="py-3 px-6 text-left">Name</th>
+      <th class="py-3 px-6 text-left">Email</th>
+      <th class="py-3 px-6 text-left">Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let client of clients" class="hover:bg-gray-100">
+      <td class="py-3 px-6">{{ client.id }}</td>
+      <td class="py-3 px-6">{{ client.nom }}</td>
+      <td class="py-3 px-6">{{ client.email }}</td>
+      <td class="py-3 px-6">
+        <button (click)="viewCredits(client.id)" class="bg-green-500 text-white px-3 py-1 rounded hover:bg-green-600">View Credits</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
